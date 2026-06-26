@@ -29,7 +29,7 @@
   --radius:    14px;
   --shadow:    0 10px 30px rgba(0, 0, 0, 0.45);
   --shadow-fire: 0 8px 26px rgba(255, 123, 0, 0.28);
-  --nav-h:     72px;
+  --nav-h:     88px;
 }
 
 /* ---------- Reset ---------- */
@@ -106,9 +106,9 @@ ul { list-style: none; }
 .navbar__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .navbar__brand { display: flex; align-items: center; }
 .navbar__logo {
-  height: 46px; width: auto;
+  height: 64px; width: auto;
   background: #fff;
-  padding: 5px 12px;
+  padding: 6px 16px;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
