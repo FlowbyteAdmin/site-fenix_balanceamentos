@@ -21,18 +21,23 @@
   /* ---------- Menu hambúrguer (mobile) ---------- */
   var toggle = document.getElementById("nav-toggle");
   var menu = document.getElementById("nav-menu");
+  var overlay = document.getElementById("nav-overlay");
 
   function closeMenu() {
     menu.classList.remove("open");
     toggle.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Abrir menu");
+    if (overlay) overlay.classList.remove("open");
+    document.body.style.overflow = "";
   }
   function openMenu() {
     menu.classList.add("open");
     toggle.classList.add("open");
     toggle.setAttribute("aria-expanded", "true");
     toggle.setAttribute("aria-label", "Fechar menu");
+    if (overlay) overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
   }
 
   if (toggle && menu) {
@@ -45,6 +50,9 @@
     menu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", closeMenu);
     });
+
+    // Fecha ao tocar fora do menu (overlay)
+    if (overlay) overlay.addEventListener("click", closeMenu);
 
     // Fecha com ESC
     document.addEventListener("keydown", function (e) {
