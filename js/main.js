@@ -126,4 +126,14 @@
       if (e.key === "Escape") closeLightbox();
     });
   }
+
+  /* ---------- Vídeos: pausa os demais ao iniciar um ---------- */
+  var videos = document.querySelectorAll(".videos .video");
+  videos.forEach(function (video) {
+    video.addEventListener("play", function () {
+      videos.forEach(function (other) {
+        if (other !== video) other.pause();
+      });
+    });
+  });
 })();
